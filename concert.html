@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Концерт от Егора</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="background"></div>
+  <div class="hearts-container" id="hearts-container"></div>
+
+  <div class="content">
+    <img src="egor_kreed_dance.gif" alt="Танцующий Егор Крид" style="max-width: 60%; border-radius: 20px; box-shadow: 0 0 15px pink;">
+    
+    <audio autoplay controls style="margin-top: 20px;">
+      <source src="egor_krid.mp3" type="audio/mpeg">
+      Твой браузер не поддерживает воспроизведение.
+    </audio>
+
+    <div class="button-container" style="margin-top: 40px;">
+      <button class="gift-button" data-description="уже послушала, понравилось?" onclick="history.back()">Назад</button>
+    </div>
+  </div>
+
+  <script src="hearts.js"></script>
+</body>
+</html>
