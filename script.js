@@ -2,24 +2,22 @@
 
 const heartsContainer = document.querySelector('.hearts-container');
 
-const emojis = ['❤️', '💖', '🥳', '🎉', '😍', '💘'];
+function createFallingEmojis(emojis = ['❤️', '😍', '💋']) {
+  const container = document.querySelector('.emoji-container');
 
-function createHeart() {
-  const heart = document.createElement('div');
-  heart.classList.add('heart');
-  heart.innerText = emojis[Math.floor(Math.random() * emojis.length)];
+  setInterval(() => {
+    const emoji = document.createElement('div');
+    emoji.className = 'falling-emoji';
+    emoji.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+    emoji.style.left = Math.random() * 100 + 'vw';
+    emoji.style.animationDuration = (2 + Math.random() * 3) + 's';
+    emoji.style.fontSize = (24 + Math.random() * 24) + 'px';
+    container.appendChild(emoji);
 
-  heart.style.position = 'absolute';
-  heart.style.left = Math.random() * 100 + 'vw';
-  heart.style.fontSize = Math.random() * 24 + 16 + 'px';
-  heart.style.top = '-20px';
-  heart.style.animation = `fall ${Math.random() * 3 + 2}s linear`;
-
-  heartsContainer.appendChild(heart);
-
-  setTimeout(() => {
-    heart.remove();
-  }, 5000);
+    setTimeout(() => {
+      emoji.remove();
+    }, 5000);
+  }, 300);
 }
 
 setInterval(createHeart, 300);
