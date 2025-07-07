@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>С Днём Рождения!</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <!-- Фоновое изображение -->
+  <div class="background"></div>
+
+  <!-- Аудио поздравление -->
+  <audio autoplay hidden>
+    <source src="audio/egor-voice.mp3" type="audio/mpeg">
+    Ваш браузер не поддерживает аудио.
+  </audio>
+
+  <!-- Контейнер с кнопками -->
+  <div class="content">
+    <h1 class="title">С Днём Рождения, крошка 💖</h1>
+    <div class="button-container">
+      <button class="gift-button" data-description="зачем тебе толпиться на концерте в Лужниках, если ты можешь послушать лайф формат" onclick="location.href='concert.html'">Подарок: 🎤 Концерт</button>
+      <button class="gift-button" data-description="надеюсь ты не забудешь наше незабываемое путешествие в Иран" onclick="location.href='iran.html'">Подарок: 🌙 Восточные сказки</button>
+      <button class="gift-button" data-description="одно лишь мгновение длиною в вечность" onclick="location.href='kiss.html'">Подарок: 💋 Любовные интриги</button>
+      <button class="gift-button" data-description="букетик для красотки" onclick="location.href='flowers.html'">Подарок: 💐 Летний букетик</button>
+      <button class="gift-button" data-description="можно попробовать поговорить с Егором 😏" onclick="location.href='dialog.html'">Подарок: 💬 Диалог</button>
+      <button class="gift-button" data-description="поздравляю с красным дипломом!" onclick="location.href='diploma.html'">Подарок: 🎓 Диплом</button>
+      <button class="gift-button" data-description="вот тебе настоящий подарок 😘" onclick="location.href='gift.html'">Подарок: 🎁 Реальный</button>
+    </div>
+  </div>
+
+  <!-- Контейнер для анимации сердечек и эмодзи -->
+  <div class="hearts-container"></div>
+</body>
+</html>
