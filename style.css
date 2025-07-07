@@ -11,8 +11,11 @@ body, html {
 
 .background {
   position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background-image: url('images/egor-background.jpg');
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: url('2c28e0ec-2f9d-495f-b5e0-a4da3cc255b7.png'); /* Путь к твоему файлу */
   background-size: cover;
   background-position: center;
   z-index: -1;
@@ -20,37 +23,37 @@ body, html {
 
 /* Заголовок */
 .title {
+  color: white;
+  font-size: 36px;
   text-align: center;
-  color: #fff;
-  font-size: 3rem;
+  margin-top: 60px;
+  text-shadow: 1px 1px 4px black;
+}
+/* Кнопки */
+.button-container {
+  display: flex; 
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
   margin-top: 40px;
 }
 
-/* Кнопки */
-.button-container {
-  display: flex; flex-wrap: wrap;
-  flex-direction: column;
-  align-items: center;
-  gap: 25px;
-  margin-top: 80px;
-}
-
 .gift-button {
-  position: relative;
-  padding: 15px 40px;
-  font-size: 1.2rem;
-  color: #fff;
-  background-color: #e60073;
+  padding: 12px 20px;
+  font-size: 18px;
+  font-weight: bold;
   border: none;
-  border-radius: 50px;
+  border-radius: 25px;
+  background-color: #ff2e8d;
+  color: white;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-  box-shadow: 0 0 15px rgba(255, 105, 180, 0.6);
+  transition: all 0.3s ease;
 }
 
 .gift-button:hover {
-  background-color: #ff3399;
-  transform: scale(1.05);
+  background-color: #ff1493;
+  transform: scale(1.1) rotate(-1deg);
+  box-shadow: 0 0 10px rgba(255, 105, 180, 0.6);
 }
 
 /* Описание при наведении */
@@ -92,4 +95,11 @@ body, html {
   flex-wrap: wrap;
   justify-content: center;
   gap: 15px;
+}
+
+.content {
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  padding: 20px;
 }
