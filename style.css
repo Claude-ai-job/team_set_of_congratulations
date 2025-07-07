@@ -11,13 +11,11 @@ body, html {
 
 .background {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: url('images/egor-background.jpg') no-repeat center center/cover;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image: url('images/egor-background.jpg');
+  background-size: cover;
+  background-position: center;
   z-index: -1;
-  filter: brightness(0.8);
 }
 
 /* Заголовок */
@@ -30,7 +28,7 @@ body, html {
 
 /* Кнопки */
 .button-container {
-  display: flex;
+  display: flex; flex-wrap: wrap;
   flex-direction: column;
   align-items: center;
   gap: 25px;
@@ -86,4 +84,12 @@ body, html {
   height: 100%;
   pointer-events: none;
   z-index: 1;
+}
+
+
+.row-layout {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
 }
