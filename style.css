@@ -15,7 +15,7 @@ body, html {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-image: url('2c28e0ec-2f9d-495f-b5e0-a4da3cc255b7.png'); /* Путь к твоему файлу */
+  background-image: url('egor-background.png'); 
   background-size: cover;
   background-position: center;
   z-index: -1;
