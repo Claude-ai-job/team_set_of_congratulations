@@ -14,14 +14,16 @@
   <div class="hearts-container" id="hearts-container"></div>
 
   <!-- Аудио -->
-  <audio id="birthday-audio" autoplay muted>
+  <audio id="birthday-audio" muted>
     <source src="audio/egor_main.mp3" type="audio/mpeg">
     Ваш браузер не поддерживает аудио.
   </audio>
 
   <!-- Основной контент -->
   <div class="content">
-    <h1 class="title">С Днём Рождения💖</h1>
+    <!-- Заголовок как кнопка -->
+    <button class="title-button" data-description="Нажми!!!" onclick="playAudio()">С Днём Рождения💖</button>
+
     <div class="button-container row-layout">
       <button class="gift-button" data-description="Зачем тебе толпиться на концерте в Лужниках, если ты можешь послушать лайф формат" onclick="location.href='concert.html'">🎤 Концерт</button>
       <button class="gift-button" data-description="Надеюсь ты не забудешь наше незабываемое путешествие в Иран" onclick="location.href='iran.html'">🌙 Восточные сказки</button>
@@ -35,13 +37,13 @@
   <!-- Скрипт для эмодзи -->
   <script src="script.js" defer></script>
 
-  <!-- Включение звука после первого клика -->
+  <!-- Функция для воспроизведения аудио -->
   <script>
-    document.body.addEventListener('click', () => {
+    function playAudio() {
       const audio = document.getElementById('birthday-audio');
       audio.muted = false;
       audio.play().catch(err => console.error("Ошибка воспроизведения:", err));
-    }, { once: true });
+    }
   </script>
 
 </body>
