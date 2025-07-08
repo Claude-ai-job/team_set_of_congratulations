@@ -6,9 +6,10 @@ body, html {
   font-family: 'Arial', sans-serif;
 }
 
+/* Фоновое изображение */
 .egor-bg {
   width: 100%;
-  max-height: 50vh;
+  height: 80vh; /* Полный экран */
   object-fit: cover;
   display: block;
   margin: 0 auto;
@@ -18,9 +19,9 @@ body, html {
   text-align: center;
   position: relative;
   z-index: 2;
-  padding: 30px 20px;
+  padding: 40px 20px;
   background: linear-gradient(to bottom, rgba(255,255,255,0.95), rgba(255,255,255,0.9));
-  margin-top: -40px;
+  margin-top: -60px;
 }
 
 .title {
@@ -32,7 +33,7 @@ body, html {
 }
 
 .button-container {
-  display: flex; 
+  display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 16px;
@@ -94,11 +95,12 @@ body, html {
   position: absolute;
   top: -30px;
   animation: fall linear forwards;
+  will-change: transform, opacity;
 }
 
 @keyframes fall {
   to {
-    transform: translateY(100vh);
+    transform: translateY(100vh) rotate(720deg);
     opacity: 0;
   }
 }

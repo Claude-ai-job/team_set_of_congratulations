@@ -1,41 +1,48 @@
 <!DOCTYPE html>
-  <html lang="ru">
-  <head>
-    <meta charset="UTF-8">
-    <title>С Днём Рождения!</title>
-    <link rel="stylesheet" href="style.css">
-    <script defer src="script.js"></script>
-  </head>
-  <body>
-    
-     <img src="images/egor-background.jpg" alt="Егор" class="egor-bg">
-    <div class="hearts-container" id="hearts-container"></div>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>С Днём Рождения!</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-    
-    <audio autoplay hidden>
-      <source src="audio/egor_main.mp3" type="audio/mpeg">
-      Ваш браузер не поддерживает аудио.
-    </audio>
+  <!-- Фоновое изображение -->
+  <img src="images/egor-background.jpg" alt="Егор" class="egor-bg">
 
-    
-    <div class="content">
-      <h1 class="title">С Днём Рождения💖</h1>
-      <div class="button-container row-layout">
-        <button class="gift-button" data-description="Зачем тебе толпиться на концерте в Лужниках, если ты можешь послушать лайф формат" onclick="location.href='concert.html'">🎤 Концерт</button>
-        <button class="gift-button" data-description="Надеюсь ты не забудешь наше незабываемое путешествие в Иран" onclick="location.href='iran.html'">🌙 Восточные сказки</button>
-        <button class="gift-button" data-description="Открывай глаза, спящая красавица Поцелуй меня, ведь нам это нравится" onclick="location.href='kiss.html'"> 💋 Любовные интриги</button>
-        <button class="gift-button" data-description="Букетик для красотки" onclick="location.href='flowers.html'">💐 Летний букетик</button>
-        <button class="gift-button" data-description="Поздравляю с красным дипломом!" onclick="location.href='diploma.html'"> 🎓 Диплом</button>
-        <button class="gift-button" data-description="Вот тебе настоящий подарок..." onclick="location.href='gift.html'"> 🎁 Реальный подарок</button>
-      </div>
+  <!-- Контейнер для падающих эмодзи -->
+  <div class="hearts-container" id="hearts-container"></div>
+
+  <!-- Аудио -->
+  <audio id="birthday-audio" autoplay muted>
+    <source src="audio/egor_main.mp3" type="audio/mpeg">
+    Ваш браузер не поддерживает аудио.
+  </audio>
+
+  <!-- Основной контент -->
+  <div class="content">
+    <h1 class="title">С Днём Рождения💖</h1>
+    <div class="button-container row-layout">
+      <button class="gift-button" data-description="Зачем тебе толпиться на концерте в Лужниках, если ты можешь послушать лайф формат" onclick="location.href='concert.html'">🎤 Концерт</button>
+      <button class="gift-button" data-description="Надеюсь ты не забудешь наше незабываемое путешествие в Иран" onclick="location.href='iran.html'">🌙 Восточные сказки</button>
+      <button class="gift-button" data-description="Открывай глаза, спящая красавица Поцелуй меня, ведь нам это нравится" onclick="location.href='kiss.html'">💋 Любовные интриги</button>
+      <button class="gift-button" data-description="Букетик для красотки" onclick="location.href='flowers.html'">💐 Летний букетик</button>
+      <button class="gift-button" data-description="Поздравляю с красным дипломом!" onclick="location.href='diploma.html'">🎓 Диплом</button>
+      <button class="gift-button" data-description="Вот тебе настоящий подарок..." onclick="location.href='gift.html'">🎁 Реальный подарок</button>
     </div>
+  </div>
 
-    
-    <div class="hearts-container"></div>
-  </body>
-  </html>
+  <!-- Скрипт для эмодзи -->
+  <script src="script.js" defer></script>
 
+  <!-- Включение звука после первого клика -->
+  <script>
+    document.body.addEventListener('click', () => {
+      const audio = document.getElementById('birthday-audio');
+      audio.muted = false;
+      audio.play().catch(err => console.error("Ошибка воспроизведения:", err));
+    }, { once: true });
+  </script>
 
-
-
-
+</body>
+</html>
