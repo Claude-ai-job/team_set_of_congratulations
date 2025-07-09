@@ -8,7 +8,7 @@
 </head>
 <body>
   <!-- Фоновое изображение -->
-  <img src="images/egor-background.jpg" alt="Егор" class="egor-bg">
+  <img src="images/egor-background1.jpg" alt="Егор" class="egor-bg">
 
   <!-- Контейнер для падающих эмодзи -->
   <div class="hearts-container" id="hearts-container"></div>
@@ -19,7 +19,7 @@
     <button class="gift-button title-button" data-description="Нажми!!!" onclick="playAudio()">С Днём Рождения💖</button>
 
     <div class="button-container">
-      <button class="gift-button" data-description="Зачем тебе толпиться на концерте в Лужниках, если ты можешь послушать лайф формат" onclick="location.href='concert.html'">🎤 Концерт</button>
+      <button class="gift-button" data-description="Вовсе не обязательно толпиться на концерте в Лужниках..." onclick="location.href='concert.html'">🎤 Концерт</button>
       <button class="gift-button" data-description="Надеюсь ты не забудешь наше незабываемое путешествие в Иран" onclick="location.href='iran.html'">🌙 Восточные сказки</button>
       <button class="gift-button" data-description="Открывай глаза, спящая красавица Поцелуй меня, ведь нам это нравится" onclick="location.href='kiss.html'">💋 Любовные интриги</button>
       <button class="gift-button" data-description="Букетик для красотки" onclick="location.href='flowers.html'">💐 Летний букетик</button>
@@ -44,17 +44,6 @@
       audio.muted = false;
       audio.play().catch(err => console.error("Ошибка воспроизведения:", err));
     }
-    
-    // Гарантируем, что фон занимает весь экран
-    function resizeBackground() {
-      const bg = document.querySelector('.egor-bg');
-      bg.style.width = '100%';
-      bg.style.height = '100%';
-      bg.style.objectFit = 'cover';
-    }
-    
-    window.addEventListener('load', resizeBackground);
-    window.addEventListener('resize', resizeBackground);
   </script>
 </body>
 </html>
