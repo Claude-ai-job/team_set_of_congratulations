@@ -12,6 +12,25 @@
   <div class="content">
     <img src="images/gift1.jpg" alt="QR-код подарка" style="max-width: 60%;max-height: 70vh; border-radius: 5px; ">
 
+     <audio autoplay loop style="display: none">
+    <source src="audio/egot_HB.mp3" type="audio/mpeg">
+    </audio>
+    <script>
+  window.addEventListener('load', () => {
+    const audio = document.getElementById('audio-player');
+    audio.muted = false;
+    audio.play().catch(() => {
+      // если не получилось — покажем кнопку вручную
+      const btn = document.createElement('button');
+      btn.innerText = "▶ Включить музыку";
+      btn.className = "gift-button";
+      btn.style.marginTop = "20px";
+      btn.onclick = () => audio.play();
+      document.body.appendChild(btn);
+    });
+  });
+</script>  
+
     <div class="button-container" style="margin-top: 40px;">
       <button class="gift-button" data-description="Не забудь активировать!!!" onclick="history.back()">Назад</button>
     </div>
