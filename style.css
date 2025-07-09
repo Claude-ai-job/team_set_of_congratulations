@@ -9,41 +9,89 @@ body, html {
   height: 100%;
   overflow: hidden; /* Отключаем любую прокрутку */
   font-family: 'Arial', sans-serif;
-}
-
-/* Фоновое изображение */
-.egor-bg {
-  position: fixed; /* Фиксируем фон */
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* Изображение масштабируется на весь экран */
-  z-index: -1; /* Помещаем под контент */
+  /* Фоновое изображение для body */
+  background-image: url('images/egor-background.jpg');
+  background-size: cover;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  position: relative;
 }
 
 .content {
+ display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* Центрирует кнопку и картинку */
+  height: 100vh;
   text-align: center;
   position: relative;
   z-index: 2;
-  padding: 40px 20px;
-  background: none; /* Убираем фон, чтобы видеть картинку */
+  gap: 30px;
+  padding-bottom: 100px; /* место для нижних кнопок */
 }
 
-.title {
-  color: #000;
-  font-size: 36px;
-  text-align: center;
-  margin-bottom: 30px;
-  text-shadow: 1px 1px 3px #f0f0f0;
+.title-button {
+  margin-top: 40px;
+  z-index: 10;
+  padding: 15px 30px;
+  font-size: 28px;
+  font-weight: bold;
+  border: none;
+  border-radius: 30px;
+  background-color: rgba(255, 46, 141, 0.8);
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  backdrop-filter: blur(3px);
+}
+
+.title-button:hover {
+  background-color: rgba(255, 20, 147, 0.9);
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(255, 105, 180, 0.8);
+}
+
+.title-button::after {
+  content: attr(data-description);
+  position: absolute;
+  bottom: -45px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255, 255, 255, 0.95);
+  color: #ff1493;
+  padding: 10px 15px;
+  border-radius: 15px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  font-size: 1rem;
+  z-index: 10;
+  font-weight: bold;
+}
+
+.title-button:hover::after {
+  opacity: 1;
 }
 
 .button-container {
+  position: fixed;
+  bottom: 2%;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 16px;
-  margin-top: 20px;
+  width: 90%;
+  max-width: 800px;
+  padding: 15px;
+  border-radius: 20px;
+  background: rgba(0, 0, 50, 0.3);
+  backdrop-filter: blur(5px);
+  z-index: 10;
 }
 
 .gift-button {
@@ -52,26 +100,28 @@ body, html {
   font-weight: bold;
   border: none;
   border-radius: 25px;
-  background-color: #ff2e8d;
+  background-color: rgba(255, 46, 141, 0.8);
   color: white;
   cursor: pointer;
   transition: all 0.3s ease;
   position: relative;
+  min-width: 160px;
 }
 
 .gift-button:hover {
-  background-color: #ff1493;
+  background-color: rgba(255, 20, 147, 0.9);
   transform: scale(1.1) rotate(-1deg);
   box-shadow: 0 0 10px rgba(255, 105, 180, 0.6);
+  z-index: 11;
 }
 
 .gift-button::after {
   content: attr(data-description);
   position: absolute;
-  bottom: -35px;
+  bottom: -45px;
   left: 50%;
   transform: translateX(-50%);
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.95);
   color: #000;
   padding: 8px 12px;
   border-radius: 10px;
@@ -81,6 +131,9 @@ body, html {
   transition: opacity 0.3s ease;
   font-size: 0.9rem;
   z-index: 10;
+  min-width: 200px;
+  font-weight: bold;
+  border: 1px solid #ff2e8d;
 }
 
 .gift-button:hover::after {
@@ -95,6 +148,7 @@ body, html {
   height: 100%;
   pointer-events: none;
   z-index: 1;
+  overflow: hidden;
 }
 
 .falling-emoji {
@@ -102,6 +156,8 @@ body, html {
   top: -30px;
   animation: fall linear forwards;
   will-change: transform, opacity;
+  z-index: 5;
+  user-select: none;
 }
 
 @keyframes fall {
@@ -109,4 +165,60 @@ body, html {
     transform: translateY(100vh) rotate(720deg);
     opacity: 0;
   }
+}
+
+/* Адаптация для мобильных */
+@media (max-width: 768px) {
+  .button-container {
+    bottom: 3%;
+    gap: 10px;
+    padding: 10px;
+    width: 95%;
+  }
+  
+  .gift-button {
+    padding: 10px 15px;
+    font-size: 16px;
+    min-width: 140px;
+  }
+  
+  .title-button {
+    margin-top: 30px;
+    padding: 12px 25px;
+    font-size: 24px;
+  }
+  
+  .gift-button::after {
+    font-size: 0.8rem;
+    bottom: -40px;
+    min-width: 180px;
+  }
+}
+
+@media (max-width: 480px) {
+  .button-container {
+    flex-direction: column;
+    align-items: center;
+    bottom: 2%;
+    gap: 8px;
+  }
+  
+  .gift-button {
+    width: 90%;
+    max-width: 250px;
+    font-size: 15px;
+  }
+  
+  .title-button {
+    font-size: 20px;
+    margin-top: 20px;
+  }
+}
+.egor-img {
+  width: 300px;
+  height: auto;
+  margin-top: 50px;
+  z-index: 2;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(255, 105, 180, 0.6);
 }
