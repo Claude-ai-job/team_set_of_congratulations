@@ -13,12 +13,6 @@
   <!-- Контейнер для падающих эмодзи -->
   <div class="hearts-container" id="hearts-container"></div>
 
-  <!-- Аудио -->
-  <audio id="birthday-audio" muted>
-    <source src="audio/egor_main.mp3" type="audio/mpeg">
-    Ваш браузер не поддерживает аудио.
-  </audio>
-
   <!-- Основной контент -->
   <div class="content">
     <!-- Заголовок как кнопка -->
@@ -33,6 +27,12 @@
       <button class="gift-button" data-description="Вот тебе настоящий подарок..." onclick="location.href='gift.html'">🎁 Реальный подарок</button>
     </div>
   </div>
+
+  <!-- Аудио (перемещено внутрь body для корректной работы) -->
+  <audio id="birthday-audio" muted>
+    <source src="audio/egor_main.mp3" type="audio/mpeg">
+    Ваш браузер не поддерживает аудио.
+  </audio>
 
   <!-- Скрипт для эмодзи -->
   <script src="script.js" defer></script>

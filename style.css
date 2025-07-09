@@ -7,20 +7,19 @@
 
 body, html {
   height: 100%;
-  overflow-x: hidden;
+  overflow: hidden; /* Отключаем любую прокрутку */
   font-family: 'Arial', sans-serif;
-  overflow-y: hidden; /* Отключаем вертикальную прокрутку */
 }
 
 /* Фоновое изображение */
 .egor-bg {
-  position: fixed; /* Фиксируем фоновое изображение */
+  position: fixed; /* Фиксируем фон */
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Изображение будет заполнять всё пространство */
-  z-index: -1; /* Помещаем фон под другие элементы */
+  object-fit: cover; /* Изображение масштабируется на весь экран */
+  z-index: -1; /* Помещаем под контент */
 }
 
 .content {
@@ -28,8 +27,7 @@ body, html {
   position: relative;
   z-index: 2;
   padding: 40px 20px;
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.9));
-  margin-top: -60px; /* Чтобы кнопка была чуть выше */
+  background: none; /* Убираем фон, чтобы видеть картинку */
 }
 
 .title {
