@@ -11,6 +11,17 @@ body, html {
   font-family: 'Arial', sans-serif;
   position: relative;
 }
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background-image: url('images/egor-background1.jpg'); /* путь к твоему фоновому изображению */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* чтобы фон не прокручивался */
+  background-repeat: no-repeat;
+  color: white; /* Чтобы текст был читаемым */
+}
 
 .egor-img {
   max-width: 90%;
