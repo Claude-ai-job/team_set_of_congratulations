@@ -7,12 +7,14 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <!-- Фоновое изображение -->
+  <img src="images/egor-background.jpg" alt="Егор" class="egor-bg">
+
   <!-- Контейнер для падающих эмодзи -->
   <div class="hearts-container" id="hearts-container"></div>
 
   <!-- Основной контент -->
   <div class="content">
-     <img src="images/egor-background.png" alt="Егор" class="egor-img">
     <!-- Заголовок как кнопка -->
     <button class="gift-button title-button" data-description="Нажми!!!" onclick="playAudio()">С Днём Рождения💖</button>
 
@@ -35,13 +37,24 @@
   <!-- Подключаем ваш скрипт для эмодзи -->
   <script src="script.js"></script>
 
-  <!-- Только функция для воспроизведения аудио -->
+  <!-- Функция для воспроизведения аудио -->
   <script>
     function playAudio() {
       const audio = document.getElementById('birthday-audio');
       audio.muted = false;
       audio.play().catch(err => console.error("Ошибка воспроизведения:", err));
     }
+    
+    // Гарантируем, что фон занимает весь экран
+    function resizeBackground() {
+      const bg = document.querySelector('.egor-bg');
+      bg.style.width = '100%';
+      bg.style.height = '100%';
+      bg.style.objectFit = 'cover';
+    }
+    
+    window.addEventListener('load', resizeBackground);
+    window.addEventListener('resize', resizeBackground);
   </script>
 </body>
 </html>
